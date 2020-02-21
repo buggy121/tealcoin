@@ -3,6 +3,8 @@ import { Worker } from 'worker_threads';
 import { ec as EC } from 'elliptic';
 import * as path from 'path';
 import * as serve from 'koa-static';
+import * as bodyParser from 'koa-bodyparser';
+
 import router from './routes';
 
 const ec = new EC('secp256k1');
@@ -25,6 +27,7 @@ const frontendServer = new Koa();
 frontendServer.use(serve(path.join(__dirname, '../', 'frontend')));
 frontendServer.use(router.routes());
 frontendServer.use(router.allowedMethods());
+frontendServer.use(bodyParser());
 
 frontendServer.listen(FRONTEND_PORT);
 console.log(`Frontend server started on port ${FRONTEND_PORT}`);

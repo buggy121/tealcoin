@@ -4,15 +4,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TealCoin GUI</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">
     <style>
-        #balanceContainer {
+        body {
+            background: #DDDDDD;
+            font-family: 'Open Sans';
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+            position: relative;
+            margin: 0;
+        }
 
+        .card {
+            box-sizing: border-box;
+            width: 100%;
+            background: #fff;
+            padding: 16px;
+        }
+
+        .card + .card {
+            margin-top: 16px;
+        }
+
+        h2 {
+            margin: 0;
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+
+        input {
+            line-height: 20px;
+            padding: 8px;
+        }
+
+        .label {
+            display: inline;
+            font-weight: 600;
+        }
+
+        .value {
+            display: inline;
+        }
+
+        #importPrivateKey {
+            margin-left: 16px;
+            vertical-align: super;
+            line-height: 24px;
+        }
+
+        #generatePrivateKey {
+            float: right;
+            vertical-align: super;
+            line-height: 24px;
+        }
+
+        #myPublicKey {
+            word-break: break-all;
         }
 
         #walletAddress {
-            line-height: 20px;
             flex-grow: 1;
-            padding: 8px;
         }
 
         .row {
@@ -23,15 +75,56 @@
             text-align: center;
             margin-top: 16px;
         }
+
+        #refreshMyBalance {
+            display: inline;
+        }
+
+        #transferCoins {
+            height: 40px;
+        }
     </style>
 </head>
 <body>
-<div id="balanceContainer">
+<div id="myWallet" class="card">
+    <div class="card-title">
+        <h2>My wallet</h2>
+        <button id="importPrivateKey">+ Import private key</button>
+        <button id="generatePrivateKey">Generate new private key</button>
+    </div>
+    <div>
+        <div class="label">public key:</div>
+        <div id="myPublicKey" class="value"></div>
+    </div>
+    <div>
+        <div class="label">balance:</div>
+        <div id="myBalance" class="value"></div>
+        <button id="refreshMyBalance">Refresh</button>
+    </div>
+</div>
+<div id="transaction" class="card">
+    <div class="card-title">
+        <h2>Transfer TealCoins</h2>
+    </div>
+    <div>
+        <div class="label">Recipient </div>
+        <input type="text" id="transferRecipient" />
+    </div>
+    <div>
+        <div class="label">Amount </div>
+        <input type="number" id="transferAmount" />
+    </div>
+    <button id="transferCoins">Transfer</button>
+</div>
+<div id="balanceContainer" class="card">
     <div class="row">
         <input type="text" id="walletAddress" />
         <button id="getBalance">Get balance</button>
     </div>
-    <div id="balance"></div>
+    <div>
+        <div class="label">Balance:</div>
+        <div id="balance" class="value"></div>
+    </div>
 </div>
 </body>
 </html>

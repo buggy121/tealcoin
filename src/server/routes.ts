@@ -17,6 +17,12 @@ router.get('/wallet/:address', (ctx) => {
     ctx.body = response;
 });
 
+router.post('/transfer', ctx => {
+    console.log(ctx.request.body);
+
+    ctx.status = 202;
+});
+
 export default router;
 
 interface WalletResponse {
