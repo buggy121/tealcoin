@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TealCoin GUI</title>
+    <style>
+        #balanceContainer {
+
+        }
+
+        #walletAddress {
+            line-height: 20px;
+            flex-grow: 1;
+            padding: 8px;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        #balance {
+            text-align: center;
+            margin-top: 16px;
+        }
+    </style>
+</head>
+<body>
+<div id="balanceContainer">
+    <div class="row">
+        <input type="text" id="walletAddress" />
+        <button id="getBalance">Get balance</button>
+    </div>
+    <div id="balance"></div>
+</div>
+</body>
+</html>

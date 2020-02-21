@@ -9,6 +9,10 @@
   ],
   "main": "dist/blockchain.js",
   "scripts": {
+    "start": "node dist/server/main.js",
+    "build:server": "tsc -p tsconfig.server.json",
+    "build:frontend": "rollup --config",
+    "build": "rm -rf ./dist && npm run build:server && npm run build:frontend",
     "test": "nyc mocha tests/*.js",
     "lint": "eslint src/** tests/**",
     "coverage": "npm run test && nyc report --reporter=text-lcov | coveralls"
@@ -38,6 +42,13 @@
     "typescript": "3.8.2",
     "koa": "2.11.0",
     "koa-static": "5.0.0",
-    "@koa/router": "8.0.8"
+    "@koa/router": "8.0.8",
+    "rollup": "1.31.1",
+    "rollup-plugin-vue": "5.1.6",
+    "rollup-plugin-typescript2": "0.26.0",
+    "rollup-plugin-commonjs": "10.1.0",
+    "rollup-plugin-node-resolve": "5.2.0",
+    "rollup-plugin-bundle-html": "0.2.2",
+    "vue": "2.6.11"
   }
 }

@@ -2,8 +2,8 @@ import * as Koa from 'koa';
 import { Worker } from 'worker_threads';
 import { ec as EC } from 'elliptic';
 import * as path from 'path';
-
-import { Blockchain } from './Blockchain';
+import * as serve from 'koa-static';
+import router from './routes';
 
 const ec = new EC('secp256k1');
 
@@ -22,11 +22,9 @@ const FRONTEND_PORT = 3000;
 
 const frontendServer = new Koa();
 
-frontendServer.use(async ctx => {
-    const tealCoin = new Blockchain();
-    ctx.body = `Hello ${myWalletAddress}, your balance: ${tealCoin.getBalanceOfAddress(myWalletAddress)}`;
-});
-
+frontendServer.use(serve(path.join(__dirname, '../', 'frontend')));
+frontendServer.use(router.routes());
+frontendServer.use(router.allowedMethods());
 
 frontendServer.listen(FRONTEND_PORT);
 console.log(`Frontend server started on port ${FRONTEND_PORT}`);
