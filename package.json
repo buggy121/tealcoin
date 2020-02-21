@@ -1,38 +1,43 @@
 {
-  "name": "savjeecoin",
-  "version": "1.0.1",
-  "description": "Simple Blockchain implementation in Javascript. For educational purposes only.",
+  "name": "tealcoin",
+  "version": "1.0.0",
+  "description": "Simple Blockchain implementation in Typescript.",
   "keywords": [
+    "tealcoin",
     "blockchain",
-    "transactions",
-    "education"
+    "transactions"
   ],
-  "main": "src/blockchain.js",
+  "main": "dist/blockchain.js",
   "scripts": {
     "test": "nyc mocha tests/*.js",
     "lint": "eslint src/** tests/**",
     "coverage": "npm run test && nyc report --reporter=text-lcov | coveralls"
   },
-  "author": "Xavier Decuyper <hi@savjee.be>",
+  "author": "Teal Team",
   "license": "MIT",
-  "repository": "github:SavjeeTutorials/SavjeeCoin",
-  "bugs": {
-    "url": "https://github.com/SavjeeTutorials/SavjeeCoin/issues"
-  },
-  "homepage": "https://github.com/SavjeeTutorials/SavjeeCoin",
   "dependencies": {
-    "debug": "^4.1.1",
-    "elliptic": "^6.5.1"
+    "debug": "4.1.1",
+    "elliptic": "6.5.2"
   },
   "devDependencies": {
-    "coveralls": "^3.0.6",
-    "eslint": "^6.5.1",
-    "eslint-config-standard": "^14.1.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-node": "^10.0.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
-    "mocha": "^6.2.1",
-    "nyc": "^14.1.1"
+    "@types/node": "13.7.4",
+    "@types/elliptic": "6.4.12",
+    "@types/debug": "4.1.5",
+    "@types/koa": "2.11.1",
+    "@types/koa-static": "4.0.1",
+    "@types/koa__router": "8.0.2",
+    "coveralls": "3.0.9",
+    "eslint": "6.8.0",
+    "eslint-config-standard": "14.1.0",
+    "eslint-plugin-import": "2.20.1",
+    "eslint-plugin-node": "11.0.0",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-standard": "4.0.1",
+    "mocha": "7.0.1",
+    "nyc": "15.0.0",
+    "typescript": "3.8.2",
+    "koa": "2.11.0",
+    "koa-static": "5.0.0",
+    "@koa/router": "8.0.8"
   }
 }

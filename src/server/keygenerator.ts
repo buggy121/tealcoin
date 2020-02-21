@@ -1,4 +1,4 @@
-const EC = require('elliptic').ec;
+import { ec as EC } from 'elliptic';
 
 // You can use any elliptic curve you want
 const ec = new EC('secp256k1');

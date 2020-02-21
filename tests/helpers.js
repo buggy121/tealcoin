@@ -1,4 +1,4 @@
-const { Transaction, Blockchain } = require('../src/blockchain');
+const { Transaction, Blockchain } = require('../src/server/Blockchain');
 const EC = require('elliptic').ec;
 const ec = new EC('secp256k1');
 const signingKey = ec.keyFromPrivate('3d6f54430830d388052865b95c10b4aeb1bbe33c01334cf2cfa8b520062a0ce3');

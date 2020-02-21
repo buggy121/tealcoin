@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { Blockchain } = require('../src/blockchain');
+const { Blockchain } = require('../src/server/Blockchain');
 const { createSignedTx, signingKey, createBlockchainWithTx, createBCWithMined } = require('./helpers');
 
 let blockchain = null;
@@ -46,7 +46,7 @@ describe('Blockchain class', function() {
 
       assert.throws(() => { blockchain.addTransaction(validTx); }, Error);
     });
-        
+
     it('should fail when tx has negative or zero amount', function() {
       const tx1 = createSignedTx(0);
       assert.throws(() => { blockchain.addTransaction(tx1); }, Error);
@@ -111,7 +111,7 @@ describe('Blockchain class', function() {
       assert(!blockchain.isChainValid());
     });
   });
-  
+
   describe('getAllTransactionsForWallet', function() {
     it('should get all Transactions for a Wallet', function() {
       const blockchain = createBCWithMined();

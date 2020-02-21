@@ -1,6 +1,6 @@
 tests/
-src/main.js
-src/keygenerator.js
+src/main.ts
+src/keygenerator.ts
 .eslintrc.js
 .travis.yml
 .nyc_output

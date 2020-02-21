@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { Transaction } = require('../src/blockchain');
+const { Transaction } = require('../src/server/Blockchain');
 const { createSignedTx, signingKey } = require('./helpers');
 
 let txObject = null;
