@@ -11,5 +11,5 @@ const { walletAddress } = workerData as Miner;
 
 while (true) {
     tealCoin.minePendingTransactions(walletAddress);
-    parentPort && parentPort.postMessage('⛏ 💎');
+    parentPort?.postMessage('⛏ 💎');
 }
